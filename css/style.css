@@ -1,0 +1,19 @@
+body {
+  background-color: red;
+}
+
+h1,
+h3,
+h5 {
+  text-align: center;
+}
+
+
+/* remove panel border */
+.panel {
+    border: 0;
+}
+
+.table > thead > tr > th, .table > thead > tr > td {
+    border: 0;
+}
