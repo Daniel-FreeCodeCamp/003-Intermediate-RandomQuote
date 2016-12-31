@@ -39,6 +39,10 @@
         $("#btnQuote").animate({ backgroundColor: newColor }, "slow");
         $("#btnTumblr").animate({ backgroundColor: newColor }, "slow");
         $("#btnTwitter").animate({ backgroundColor: newColor }, "slow");
+
+        $("#ghBtnTxt").animate({ color: newColor }, "slow");
+        $("#ghIcon").animate({ color: newColor }, "slow");
+
         getRandomQuote();
       });
 
@@ -96,7 +100,7 @@
 
               <div class="col-md-3">
                 <button class="btn btn-block" style="color:white;background-color: red;" id="btnQuote">
-                  New Quote
+                  new quote
                 </button>
                 <span id="quote-source"></span>
               </div>
@@ -108,15 +112,13 @@
           </div>
         </div>
 
-        <!--
-        <a style="width:250px;margin-left:auto; margin-right:auto;" class="btn btn-block btn-social btn-github"
-            onclick="window.location.href = 'https://github.com/Daniel-FreeCodeCamp/003-intermediate-fend-RandomQuote';">
-          <span class="fa fa-github"></span>Github Source for this site
-        </a>
-        -->
-
         <h4>
-          <span class="fa fa-github"></span> <span onclick="window.location.href = 'https://github.com/Daniel-FreeCodeCamp/003-intermediate-fend-RandomQuote';">&nbsp; Click for Github Source </span>
+          <button class="btn btn-block" style="background-color: white;" onclick="window.location.href = 'https://github.com/Daniel-FreeCodeCamp/003-intermediate-fend-RandomQuote';">
+            <span id="ghIcon" class="fa fa-github" style="color:red;background-color: white;"> </span>
+            <span id="ghBtnTxt" style="color:red;background-color: white;">
+              Click for Github Source
+            </span>
+          </button>
         </h4>
 
       </div>
