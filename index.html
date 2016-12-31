@@ -1,130 +1,130 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Random Quote</title>
+  <meta charset="UTF-8">
+  <title>Random Quote</title>
 
-    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="css/bootstrap-social.css" rel="stylesheet" >	
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-    <script src="quotes.js"></script>
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="css/bootstrap-social.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <script src="quotes.js"></script>
 
-    <script>
-        var colors = ['#90EE90', '#7B68EE', '#9370DB', '#D8BFD8', '#BDB76B', '#FFA500'];
-        var quote_ = "";
-        var author_ = "";
+  <script>
+    var colors = ['#90EE90', '#7B68EE', '#9370DB', '#D8BFD8', '#BDB76B', '#FFA500'];
+    var quote_ = "";
+    var author_ = "";
 
-        function getRandomQuote() {
-            var qIndex = Math.floor((Math.random() * quotesArr.length) + 1);
-            var quote = quotesArr[qIndex].quote;
-            var author = quotesArr[qIndex].who;
-            quote_ = quote;
-            author_ = author;
-            document.getElementById("quoteId").innerHTML = quote;
-            document.getElementById("authorId").innerHTML = "-" + author;
-            var cIndex = Math.floor((Math.random() * colors.length) + 1);
-        }
+    function getRandomQuote() {
+      var qIndex = Math.floor((Math.random() * quotesArr.length) + 1);
+      var quote = quotesArr[qIndex].quote;
+      var author = quotesArr[qIndex].who;
+      quote_ = quote;
+      author_ = author;
+      document.getElementById("quoteId").innerHTML = quote;
+      document.getElementById("authorId").innerHTML = "-" + author;
+      var cIndex = Math.floor((Math.random() * colors.length) + 1);
+    }
 
-        $(document).ready(function () {
-            $("button").click(function () {
-                var newColor = colors[Math.floor(Math.random() * colors.length)];
-                console.log(newColor);
-                $("body").animate({ backgroundColor: newColor }, "slow");
-                $("#containerId").animate({ backgroundColor: newColor }, "slow");
-                $("#quoteId").animate({ color: newColor }, "slow");
-                $("#authorId").animate({ color: newColor }, "slow");
-                $("#btnQuote").animate({ backgroundColor: newColor }, "slow");
-                $("#btnTumblr").animate({ backgroundColor: newColor }, "slow");
-                $("#btnTwitter").animate({ backgroundColor: newColor }, "slow");
-                getRandomQuote();
-            });
+    $(document).ready(function () {
+      $("button").click(function () {
+        var newColor = colors[Math.floor(Math.random() * colors.length)];
+        console.log(newColor);
+        $("body").animate({ backgroundColor: newColor }, "slow");
+        $("#containerId").animate({ backgroundColor: newColor }, "slow");
+        $("#quoteId").animate({ color: newColor }, "slow");
+        $("#authorId").animate({ color: newColor }, "slow");
+        $("#btnQuote").animate({ backgroundColor: newColor }, "slow");
+        $("#btnTumblr").animate({ backgroundColor: newColor }, "slow");
+        $("#btnTwitter").animate({ backgroundColor: newColor }, "slow");
+        getRandomQuote();
+      });
 
-            $('#btnTumblr').click(function (evt) {
-                evt.preventDefault();
-                alert("tumblr");
-            });
+      $('#btnTumblr').click(function (evt) {
+        evt.preventDefault();
+        alert("tumblr");
+      });
 
-            $('#btnTwitter').click(function (evt) {
-                var ttext = quote_ + "-" + author_;
-                evt.preventDefault();
-                var twtLink = 'http://twitter.com/home?status=' + encodeURIComponent(ttext);
-                window.open(twtLink, '_blank');
-            });
-			
-			getRandomQuote();
-			
-        });
-    </script>
+      $('#btnTwitter').click(function (evt) {
+        var ttext = quote_ + "-" + author_;
+        evt.preventDefault();
+        var twtLink = 'http://twitter.com/home?status=' + encodeURIComponent(ttext);
+        window.open(twtLink, '_blank');
+      });
+
+      getRandomQuote();
+
+    });
+  </script>
 
 </head>
 <body onload="">
-    <div class="container" id="containerId" style="color:white;">
+  <div class="container" id="containerId" style="color:white;">
 
-        <div class="row" style="padding-top:100px;">
-            <div class="col-md-2">
+    <div class="row" style="padding-top:100px;">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-8">
+
+        <div class="panel panel-default" style="padding-bottom:20px;">
+          <div class="panel-body" style="text-align:center; color:red">
+            <h2 id="quoteId"></h2>
+
+            <div id="authorId" style="text-align:right;color:red; margin-right:50px;">
             </div>
-            <div class="col-md-8">
 
-                <div class="panel panel-default" style="padding-bottom:20px;">
-                    <div class="panel-body" style="text-align:center; color:red">
-                        <h2 id="quoteId"></h2>
+            <div id="buttonRowId" class="row" style="color:red; margin-top:30px;">
+              <div class="col-md-1">
+                <!-- spacer -->
+              </div>
 
-                        <div id="authorId" style="text-align:right;color:red; margin-right:50px;">
-                        </div>
+              <!--
+              buttons here - https://lipis.github.io/bootstrap-social/
+              -->
 
-                        <div id="buttonRowId" class="row" style="color:red; margin-top:30px;">
-                            <div class="col-md-1">
-                                <!-- spacer -->
-                            </div>
+              <div class="col-md-3">
+                <a class="btn btn-social-icon btn-twitter;" style="background-color: red;color:white;" id="btnTwitter">
+                  <span class="fa fa-twitter"></span>
+                </a>
+              </div>
 
-                            <!--
-                            buttons here - https://lipis.github.io/bootstrap-social/
-                            -->
+              <div class="col-md-4">
+                <!-- spacer -->
+              </div>
 
-                            <div class="col-md-3">
-                                <a class="btn btn-social-icon btn-twitter;" style="background-color: red;color:white;" id="btnTwitter">
-                                    <span class="fa fa-twitter"></span>
-                                </a>
-                            </div>
+              <div class="col-md-3">
+                <button class="btn btn-block" style="color:white;background-color: red;" id="btnQuote">
+                  New Quote
+                </button>
+                <span id="quote-source"></span>
+              </div>
 
-                            <div class="col-md-4">
-                                <!-- spacer -->
-                            </div>
-
-                            <div class="col-md-3">
-                                <button class="btn btn-block" style="color:white;background-color: red;" id="btnQuote">
-                                    New Quote
-                                </button>
-                                <span id="quote-source"></span>
-                            </div>
-
-                            <div class="col-md-1">
-                                <!-- spacer -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-				<!--
-				<a style="width:250px;margin-left:auto; margin-right:auto;" class="btn btn-block btn-social btn-github" 
-					onclick="window.location.href = 'https://github.com/Daniel-FreeCodeCamp/003-intermediate-fend-RandomQuote';">
-				  <span class="fa fa-github"></span>Github Source for this site
-				</a>				
-				-->
-				
-				<h4>
-					<span class="fa fa-github"></span> <span onclick="window.location.href = 'https://github.com/Daniel-FreeCodeCamp/003-intermediate-fend-RandomQuote';">&nbsp; Click for Github Source </span>
-				</h4>
-
+              <div class="col-md-1">
+                <!-- spacer -->
+              </div>
             </div>
-            <div class="col-md-2">
-            </div>
+          </div>
         </div>
 
+        <!--
+        <a style="width:250px;margin-left:auto; margin-right:auto;" class="btn btn-block btn-social btn-github"
+            onclick="window.location.href = 'https://github.com/Daniel-FreeCodeCamp/003-intermediate-fend-RandomQuote';">
+          <span class="fa fa-github"></span>Github Source for this site
+        </a>
+        -->
+
+        <h4>
+          <span class="fa fa-github"></span> <span onclick="window.location.href = 'https://github.com/Daniel-FreeCodeCamp/003-intermediate-fend-RandomQuote';">&nbsp; Click for Github Source </span>
+        </h4>
+
+      </div>
+      <div class="col-md-2">
+      </div>
     </div>
-    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+
+  </div>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
 </body>
 </html>
